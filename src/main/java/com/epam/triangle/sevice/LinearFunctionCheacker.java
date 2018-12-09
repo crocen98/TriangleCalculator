@@ -1,6 +1,7 @@
 package com.epam.triangle.sevice;
 
 import com.epam.triangle.entity.Point2D;
+import com.epam.triangle.exception.CannotCalculateFunctionsCoefficiensException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,20 +21,23 @@ public class LinearFunctionCheacker implements FunctionMatchesCheasker {
 
 
     private double calculateK()  {
-
-        double k= (pointTwo.getY() - pointOne.getY())
-                  /(pointTwo.getX() - pointOne.getX());
-        return k;
+        return (pointTwo.getY() - pointOne.getY())
+                /(pointTwo.getX() - pointOne.getX());
     }
 
     private double calculateB()  {
         double k = calculateK();
-        double b = pointTwo.getY() -k*pointTwo.getX();
-        return b;
+        return  pointTwo.getY() -k*pointTwo.getX();
     }
 
     @Override
-    public boolean matches(Point2D point)  {
+    public boolean matches(Point2D point) throws CannotCalculateFunctionsCoefficiensException {
+        if(pointOne.equals(pointTwo)){
+            CannotCalculateFunctionsCoefficiensException exception =  new CannotCalculateFunctionsCoefficiensException(
+                    "Needed two different points for defining linear function");
+            LOGGER.error(pointOne + " equals " + pointTwo + " " + exception);
+            throw exception;
+        }
         double k = calculateK();
         double b = calculateB();
         return point.getY() == point.getX()*k + b;

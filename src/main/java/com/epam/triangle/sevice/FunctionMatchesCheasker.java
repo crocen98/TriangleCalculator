@@ -1,7 +1,8 @@
 package com.epam.triangle.sevice;
 
 import com.epam.triangle.entity.Point2D;
+import com.epam.triangle.exception.CannotCalculateFunctionsCoefficiensException;
 
 public interface FunctionMatchesCheasker {
-    public boolean matches(Point2D point) ;
+     boolean matches(Point2D point) throws CannotCalculateFunctionsCoefficiensException;
 }

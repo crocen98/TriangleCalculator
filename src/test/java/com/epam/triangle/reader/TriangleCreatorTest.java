@@ -3,6 +3,7 @@ package com.epam.triangle.reader;
 import com.epam.triangle.creator.TriangleCreator;
 import com.epam.triangle.entity.Point2D;
 import com.epam.triangle.entity.Triangle;
+import com.epam.triangle.exception.CannotCalculateFunctionsCoefficiensException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,7 +14,7 @@ public class TriangleCreatorTest {
     private final TriangleCreator CREATOR = new TriangleCreator();
 
     @Test
-    public void shouldReturnListWithZeroSize(){
+    public void shouldReturnListWithZeroSize() throws CannotCalculateFunctionsCoefficiensException {
         List<Point2D[]> pointsList = new ArrayList<>();
         pointsList.add(new Point2D[]{new Point2D(0,0),new Point2D(0,0),new Point2D(0,0)});
         pointsList.add(new Point2D[]{});
@@ -25,7 +26,7 @@ public class TriangleCreatorTest {
 
 
     @Test
-    public void shouldReturnListWithTwoSizeAndCreatedTriangelsShouldContainDataFromArray(){
+    public void shouldReturnListWithTwoSizeAndCreatedTriangelsShouldContainDataFromArray() throws CannotCalculateFunctionsCoefficiensException {
         List<Point2D[]> pointsList = new ArrayList<>();
 
         Point2D[] firstTestArray = {new Point2D(0,0),new Point2D(1,0),new Point2D(0,1)};

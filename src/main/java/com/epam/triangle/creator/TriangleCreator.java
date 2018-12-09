@@ -2,6 +2,7 @@ package com.epam.triangle.creator;
 
 import com.epam.triangle.entity.Point2D;
 import com.epam.triangle.entity.Triangle;
+import com.epam.triangle.exception.CannotCalculateFunctionsCoefficiensException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,7 +13,7 @@ import java.util.List;
 public class TriangleCreator {
     private static final Logger LOGGER = LogManager.getLogger(Triangle.class);
 
-    private Triangle create(Point2D[] points)  {
+    private Triangle create(Point2D[] points) throws CannotCalculateFunctionsCoefficiensException {
         TriangleValidator validator = new TriangleValidator();
         if(!validator.isValid(points)){
             LOGGER.warn("not valid data  for creating triangle: " + Arrays.toString(points));
@@ -23,7 +24,7 @@ public class TriangleCreator {
 
     }
 
-    public List<Triangle> createList(List<Point2D[]> listOfPonts)  {
+    public List<Triangle> createList(List<Point2D[]> listOfPonts) throws CannotCalculateFunctionsCoefficiensException {
         List<Triangle> triangleList = new LinkedList<>();
 
         for (Point2D[] points: listOfPonts){

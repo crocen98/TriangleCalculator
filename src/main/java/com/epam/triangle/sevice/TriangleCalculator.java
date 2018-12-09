@@ -3,10 +3,10 @@ package com.epam.triangle.sevice;
 import com.epam.triangle.entity.Point2D;
 import com.epam.triangle.entity.Triangle;
 
-import java.nio.file.Files;
 import java.util.Arrays;
 
 import static java.lang.Math.pow;
+import static java.lang.Math.round;
 import static java.lang.Math.sqrt;
 
 public class TriangleCalculator {
@@ -23,20 +23,23 @@ public class TriangleCalculator {
     public boolean isRight(Triangle triangle){
 
         DistanceCalculator calculator = DistanceCalculator.getInstance();
-        double[] sides = allTriangleSides(triangle,calculator);
+        double[] sides = allSides(triangle,calculator);
         Arrays.sort(sides);
 
         double hypotenuse = sides[2];
+        double roundHypotenuse = round(hypotenuse * 10d)/10d;
+
         double legOneSquare = pow(sides[1],2);
         double legTwoSquare =  pow(sides[0],2);
         double sumLegsSquare = sqrt(legOneSquare + legTwoSquare);
-        return Double.compare(hypotenuse , sumLegsSquare) == 0;
+        double roundSumLegsSquare = round(sumLegsSquare * 10d) / 10d;
+        return Double.compare(roundHypotenuse , roundSumLegsSquare) == 0;
     }
 
 
     public boolean isIsosceles(Triangle triangle){
         DistanceCalculator calculator = DistanceCalculator.getInstance();
-        double[] sides = allTriangleSides(triangle,calculator);
+        double[] sides = allSides(triangle,calculator);
 
         double sideOne = sides[0];
         double sideTwo = sides[1];
@@ -51,7 +54,7 @@ public class TriangleCalculator {
 
     public boolean isEquilateral(Triangle triangle){
         DistanceCalculator calculator = DistanceCalculator.getInstance();
-        double[] sides = allTriangleSides(triangle,calculator);
+        double[] sides = allSides(triangle,calculator);
 
         double sideOne = sides[0];
         double sideTwo = sides[1];
@@ -62,7 +65,7 @@ public class TriangleCalculator {
 
     }
 
-    private double[] allTriangleSides(Triangle triangle, DistanceCalculator calculator){
+    private double[] allSides(Triangle triangle, DistanceCalculator calculator){
 
         Point2D[] points = triangle.getAllPoints();
         double[] sides = new double[3];
@@ -78,7 +81,7 @@ public class TriangleCalculator {
 
     public  boolean isObsute(Triangle triangle){
         DistanceCalculator calculator = DistanceCalculator.getInstance();
-        double[] sides = allTriangleSides(triangle,calculator);
+        double[] sides = allSides(triangle,calculator);
         Arrays.sort(sides);
 
         double theBiggestSideSquare = pow(sides[2],2);
@@ -95,7 +98,7 @@ public class TriangleCalculator {
 
     public double perimeter(Triangle triangle){
         DistanceCalculator calculator = DistanceCalculator.getInstance();
-        double[] sides = allTriangleSides(triangle,calculator);
+        double[] sides = allSides(triangle,calculator);
 
         double perimiter =0;
         for (double side:sides){
@@ -107,7 +110,7 @@ public class TriangleCalculator {
 
     public double square(Triangle triangle){
         DistanceCalculator calculator = DistanceCalculator.getInstance();
-        double[] sides = allTriangleSides(triangle,calculator);
+        double[] sides = allSides(triangle,calculator);
 
         double sideOne = sides[0];
         double sideTwo = sides[1];
@@ -119,23 +122,6 @@ public class TriangleCalculator {
                 * (semiPerimeter  -sideOne)
                 * (semiPerimeter - sideTwo)
                 * (semiPerimeter - sideTree));
-        return square;
-    }
-
-    public static void main(String ... args){
-        Point2D[] arr = new Point2D[3];
-
-        arr[0] = new Point2D(4,0);
-        arr[1] = new Point2D(6,0);
-        arr[2] = new Point2D(5,sqrt(3));
-
-        Triangle triangle = new Triangle(arr);
-
-        TriangleCalculator calculator = TriangleCalculator.getInstance();
-
-        System.out.println(calculator.isRight(triangle));
-        System.out.println(calculator.isIsosceles(triangle));
-        System.out.println(calculator.isEquilateral(triangle));
-
+        return round(square*100d)/100d;
     }
 }
