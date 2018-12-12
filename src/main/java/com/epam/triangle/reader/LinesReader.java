@@ -24,6 +24,9 @@ public class LinesReader {
         } catch (FileNotFoundException e) {
             LOGGER.error("Exception generated! Path " + path + " not valid. " + e);
             throw new NotSupportedPuthException("Invalid path: " + path, e);
+        } catch (IOException e){
+            LOGGER.error(e);
+            throw e;
         }
     }
 }
