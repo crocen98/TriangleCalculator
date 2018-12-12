@@ -1,6 +1,5 @@
 package com.epam.triangle.sevice;
 
-import com.epam.triangle.entity.Point2D;
 import com.epam.triangle.entity.Triangle;
 
 

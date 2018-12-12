@@ -4,6 +4,7 @@ import com.epam.triangle.exception.NotSupportedPuthException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -14,15 +15,15 @@ public class LinesReader {
     private static final Logger LOGGER = LogManager.getLogger(LinesReader.class);
 
 
-    public  List<String> readAllLines(Path path , Charset charset) throws NotSupportedPuthException  {
+    public List<String> readAllLines(Path path, Charset charset) throws IOException {
         try {
             LOGGER.info("Start reading lines from: " + path);
-            List<String> lines = Files.readAllLines(path,charset);
+            List<String> lines = Files.readAllLines(path, charset);
             LOGGER.info("All lines was reading from: " + path);
             return lines;
-        } catch (IOException e) {
-            LOGGER.error("Exception generated! Path " + path + " not valid.");
-            throw new NotSupportedPuthException("Invalid path: " + path , e);
+        } catch (FileNotFoundException e) {
+            LOGGER.error("Exception generated! Path " + path + " not valid. " + e);
+            throw new NotSupportedPuthException("Invalid path: " + path, e);
         }
     }
 }

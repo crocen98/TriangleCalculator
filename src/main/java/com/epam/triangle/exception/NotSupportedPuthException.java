@@ -1,6 +1,8 @@
 package com.epam.triangle.exception;
 
-public class NotSupportedPuthException extends Exception {
+import java.io.IOException;
+
+public class NotSupportedPuthException extends IOException {
     public NotSupportedPuthException(String msg, Throwable exception) {
         super(msg, exception);
     }
