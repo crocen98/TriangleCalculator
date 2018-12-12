@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TriangleCreatorTest {
-    private final TriangleCreator CREATOR = new TriangleCreator();
+    private final TriangleCreator CREATOR = TriangleCreator.getInstance();
 
     @Test
     public void shouldReturnListWithZeroSize() throws CannotCalculateFunctionsCoefficiensException {

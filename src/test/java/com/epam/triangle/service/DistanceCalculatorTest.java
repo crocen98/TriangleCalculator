@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class DistanceCalculatorTest {
-private static DistanceCalculator CALCULATOR = DistanceCalculator.getInstance();
+private final DistanceCalculator CALCULATOR = new DistanceCalculator();
 
 @Test
     public void shouldReturnZero(){

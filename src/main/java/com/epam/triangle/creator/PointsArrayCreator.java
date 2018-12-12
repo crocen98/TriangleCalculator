@@ -3,7 +3,6 @@ package com.epam.triangle.creator;
 
 
 import com.epam.triangle.entity.Point2D;
-import com.epam.triangle.entity.Triangle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,6 +13,17 @@ import java.util.List;
 public class PointsArrayCreator {
 
     private static final Logger LOGGER = LogManager.getLogger(PointsArrayCreator.class);
+    private PointsArrayCreator(){}
+
+    private static class PointsArrayCreatorHolder{
+        private static final PointsArrayCreator INSTANCE = new PointsArrayCreator();
+    }
+
+    public static PointsArrayCreator getInstance(){
+        return PointsArrayCreatorHolder.INSTANCE;
+    }
+
+
 
     public Point2D[] createPoints(double[] cordinates){
 

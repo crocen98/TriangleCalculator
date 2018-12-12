@@ -5,16 +5,6 @@ import com.epam.triangle.entity.Point2D;
 import static java.lang.Math.*;
 
 public class DistanceCalculator {
-    public static DistanceCalculator getInstance(){
-        return DistanceCalculatorHolder.INSTANCE;
-    }
-    private DistanceCalculator(){}
-
-    private static class DistanceCalculatorHolder{
-        private static final DistanceCalculator INSTANCE = new DistanceCalculator();
-    }
-
-
 
     public  double calculateDistance(Point2D point1, Point2D point2){
         double oX = point1.getX() - point2.getX();

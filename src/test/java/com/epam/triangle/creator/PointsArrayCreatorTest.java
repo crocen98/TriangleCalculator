@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PointsArrayCreatorTest {
-    private final static PointsArrayCreator creator = new PointsArrayCreator();
+    private final  PointsArrayCreator creator = PointsArrayCreator.getInstance();
 
     @Test
     public void shouldReturnNullBecauseNotValidDAtaArray(){

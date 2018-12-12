@@ -1,7 +1,6 @@
 package com.epam.triangle.entity;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 public class Point2D implements Serializable {
 

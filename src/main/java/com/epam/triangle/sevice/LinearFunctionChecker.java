@@ -5,15 +5,15 @@ import com.epam.triangle.exception.CannotCalculateFunctionsCoefficiensException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class LinearFunctionCheacker implements FunctionMatchesCheasker {
+public class LinearFunctionChecker implements FunctionMatchesChecker {
 
-    private static final Logger LOGGER = LogManager.getLogger(LinearFunctionCheacker.class);
+    private static final Logger LOGGER = LogManager.getLogger(LinearFunctionChecker.class);
 
 
     private Point2D pointOne;
     private  Point2D pointTwo;
 
-    public LinearFunctionCheacker(Point2D pointOne, Point2D pointTwo){
+    public LinearFunctionChecker(Point2D pointOne, Point2D pointTwo){
         this.pointOne = pointOne;
         this.pointTwo = pointTwo;
     }

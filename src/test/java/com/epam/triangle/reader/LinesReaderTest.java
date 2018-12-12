@@ -1,7 +1,6 @@
 package com.epam.triangle.reader;
 
 import com.epam.triangle.exception.NotSupportedPuthException;
-import com.epam.triangle.reader.LinesReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

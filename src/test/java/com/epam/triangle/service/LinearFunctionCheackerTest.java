@@ -2,8 +2,8 @@ package com.epam.triangle.service;
 
 import com.epam.triangle.entity.Point2D;
 import com.epam.triangle.exception.CannotCalculateFunctionsCoefficiensException;
-import com.epam.triangle.sevice.FunctionMatchesCheasker;
-import com.epam.triangle.sevice.LinearFunctionCheacker;
+import com.epam.triangle.sevice.FunctionMatchesChecker;
+import com.epam.triangle.sevice.LinearFunctionChecker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,7 +17,7 @@ public class LinearFunctionCheackerTest {
        Point2D thirdPoint = new Point2D(2,2);
        Point2D forthPoint = new Point2D(1,1);
 
-       FunctionMatchesCheasker cheacker = new LinearFunctionCheacker(firstPoint,secondPoint);
+       FunctionMatchesChecker cheacker = new LinearFunctionChecker(firstPoint,secondPoint);
        Assert.assertTrue(cheacker.matches(thirdPoint));
        Assert.assertTrue(cheacker.matches(forthPoint));
    }
@@ -29,7 +29,7 @@ public class LinearFunctionCheackerTest {
         Point2D thirdPoint = new Point2D(23,2);
         Point2D forthPoint = new Point2D(11,1);
 
-        FunctionMatchesCheasker checker = new LinearFunctionCheacker(firstPoint,secondPoint);
+        FunctionMatchesChecker checker = new LinearFunctionChecker(firstPoint,secondPoint);
         Assert.assertFalse(checker.matches(thirdPoint));
         Assert.assertFalse(checker.matches(forthPoint));
     }
@@ -40,7 +40,7 @@ public class LinearFunctionCheackerTest {
         Point2D firstPoint = new Point2D(1,1);
         Point2D secondPoint = new Point2D(1,1);
         Point2D thirdPoint = new Point2D(2,2);
-        FunctionMatchesCheasker checker = new LinearFunctionCheacker(firstPoint,secondPoint);
+        FunctionMatchesChecker checker = new LinearFunctionChecker(firstPoint,secondPoint);
         Assert.assertTrue(checker.matches(thirdPoint));
 
 

@@ -2,8 +2,8 @@ package com.epam.triangle.creator;
 
 import com.epam.triangle.entity.Point2D;
 import com.epam.triangle.exception.CannotCalculateFunctionsCoefficiensException;
-import com.epam.triangle.sevice.FunctionMatchesCheasker;
-import com.epam.triangle.sevice.LinearFunctionCheacker;
+import com.epam.triangle.sevice.FunctionMatchesChecker;
+import com.epam.triangle.sevice.LinearFunctionChecker;
 
 public class TriangleValidator {
     public boolean isValid(Point2D[] points) throws CannotCalculateFunctionsCoefficiensException {
@@ -20,7 +20,7 @@ public class TriangleValidator {
                 || pointTwo.equals(pointTree)){
             return false;
         }
-        FunctionMatchesCheasker cheasker = new LinearFunctionCheacker(pointOne,pointTwo);
-        return !cheasker.matches(pointTree);
+        FunctionMatchesChecker checker = new LinearFunctionChecker(pointOne,pointTwo);
+        return !checker.matches(pointTree);
     }
 }

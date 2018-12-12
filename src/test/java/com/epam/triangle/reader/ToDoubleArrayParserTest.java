@@ -1,7 +1,6 @@
 package com.epam.triangle.reader;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -9,18 +8,18 @@ import java.util.List;
 
 public class ToDoubleArrayParserTest {
 
-private static final ToDoubleArrayParser parser = new ToDoubleArrayParser();
+private  final ToDoubleArrayParser parser = new ToDoubleArrayParser();
 
 @Test
 public void shouldParseAndReturnListOfThreeDoubleArrays(){
-    //given
+
     List<String> nums = new ArrayList<>();
     nums.add("1 2 3.4 4 5 6  ");
     nums.add("1 4 3 4 5.5 3 ");
     nums.add("1 2.3 3 4 6 6   ");
-    //when
+
     List<double[]> doubles = parser.parse(nums);
-    //then
+
     Assert.assertEquals(3, doubles.size());
     double[] firstArr = doubles.get(0);
 

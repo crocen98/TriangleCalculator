@@ -13,6 +13,17 @@ import java.util.List;
 public class TriangleCreator {
     private static final Logger LOGGER = LogManager.getLogger(Triangle.class);
 
+
+    private TriangleCreator(){}
+    private static class TriangleCreatorHolder{
+        private static final TriangleCreator INSTANCE = new TriangleCreator();
+    }
+
+    public static TriangleCreator getInstance(){
+        return TriangleCreatorHolder.INSTANCE;
+    }
+
+
     private Triangle create(Point2D[] points) throws CannotCalculateFunctionsCoefficiensException {
         TriangleValidator validator = new TriangleValidator();
         if(!validator.isValid(points)){
@@ -21,13 +32,14 @@ public class TriangleCreator {
         }
 
         return new Triangle(points);
-
     }
 
-    public List<Triangle> createList(List<Point2D[]> listOfPonts) throws CannotCalculateFunctionsCoefficiensException {
+
+
+    public List<Triangle> createList(List<Point2D[]> listOfPoints) throws CannotCalculateFunctionsCoefficiensException {
         List<Triangle> triangleList = new LinkedList<>();
 
-        for (Point2D[] points: listOfPonts){
+        for (Point2D[] points: listOfPoints){
             Triangle triangle = create(points);
             if(triangle != null){
                 triangleList.add(triangle);
