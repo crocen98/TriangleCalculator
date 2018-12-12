@@ -4,10 +4,10 @@ import com.epam.triangle.exception.NotSupportedPuthException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class LinesReader {
             List<String> lines = Files.readAllLines(path, charset);
             LOGGER.info("All lines was reading from: " + path);
             return lines;
-        } catch (FileNotFoundException e) {
+        } catch (NoSuchFileException e) {
             LOGGER.error("Exception generated! Path " + path + " not valid. " + e);
             throw new NotSupportedPuthException("Invalid path: " + path, e);
         } catch (IOException e){

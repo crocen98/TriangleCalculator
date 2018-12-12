@@ -1,16 +1,16 @@
-2018-12-12 23:20:23.092 [main] WARN  com.epam.triangle.creator.PointsArrayCreator - Not valid data for creating Points2D[]: [1.0, 2.0, 3.0, 4.0, 4.0]
-2018-12-12 23:20:23.095 [main] WARN  com.epam.triangle.creator.PointsArrayCreator - Not valid data for creating Points2D[]: []
-2018-12-12 23:20:23.096 [main] WARN  com.epam.triangle.creator.PointsArrayCreator - Not valid data for creating Points2D[]: [-2.0]
-2018-12-12 23:20:23.099 [main] WARN  com.epam.triangle.creator.PointsArrayCreator - Not valid data for creating Points2D[]: [1.0, 2.0, 3.0, 4.0, 4.0]
-2018-12-12 23:20:23.099 [main] WARN  com.epam.triangle.creator.PointsArrayCreator - Not valid data for creating Points2D[]: []
-2018-12-12 23:20:23.103 [main] INFO  com.epam.triangle.reader.LinesReader - Start reading lines from: resourses\data\data.txt
-2018-12-12 23:20:23.106 [main] INFO  com.epam.triangle.reader.LinesReader - All lines was reading from: resourses\data\data.txt
-2018-12-12 23:20:23.107 [main] INFO  com.epam.triangle.reader.LinesReader - Start reading lines from: resourses\data\empty.txt
-2018-12-12 23:20:23.108 [main] INFO  com.epam.triangle.reader.LinesReader - All lines was reading from: resourses\data\empty.txt
-2018-12-12 23:20:23.108 [main] INFO  com.epam.triangle.reader.LinesReader - Start reading lines from: resoursess\data\data.txt
-2018-12-12 23:20:23.109 [main] ERROR com.epam.triangle.reader.LinesReader - Exception generated! Path resoursess\data\data.txt not valid.
-2018-12-12 23:20:23.113 [main] WARN  com.epam.triangle.entity.Triangle - not valid data  for creating triangle: []
-2018-12-12 23:20:23.114 [main] WARN  com.epam.triangle.entity.Triangle - not valid data  for creating triangle: [Point2D{ x=0.0, y=0.0}, Point2D{ x=0.0, y=0.0}, Point2D{ x=0.0, y=0.0}]
-2018-12-12 23:20:23.114 [main] WARN  com.epam.triangle.entity.Triangle - not valid data  for creating triangle: []
-2018-12-12 23:20:23.114 [main] WARN  com.epam.triangle.entity.Triangle - not valid data  for creating triangle: [Point2D{ x=0.0, y=0.0}, Point2D{ x=1.0, y=1.0}, Point2D{ x=2.0, y=2.0}]
-2018-12-12 23:20:23.118 [main] ERROR com.epam.triangle.sevice.LinearFunctionChecker - Point2D{ x=1.0, y=1.0} equals Point2D{ x=1.0, y=1.0} com.epam.triangle.exception.CannotCalculateFunctionsCoefficiensException: Needed two different points for defining linear function
+2018-12-12 23:54:54.906 [main] WARN  com.epam.triangle.creator.PointsArrayCreator - Not valid data for creating Points2D[]: [1.0, 2.0, 3.0, 4.0, 4.0]
+2018-12-12 23:54:54.908 [main] WARN  com.epam.triangle.creator.PointsArrayCreator - Not valid data for creating Points2D[]: []
+2018-12-12 23:54:54.909 [main] WARN  com.epam.triangle.creator.PointsArrayCreator - Not valid data for creating Points2D[]: [-2.0]
+2018-12-12 23:54:54.911 [main] WARN  com.epam.triangle.creator.PointsArrayCreator - Not valid data for creating Points2D[]: [1.0, 2.0, 3.0, 4.0, 4.0]
+2018-12-12 23:54:54.912 [main] WARN  com.epam.triangle.creator.PointsArrayCreator - Not valid data for creating Points2D[]: []
+2018-12-12 23:54:54.914 [main] INFO  com.epam.triangle.reader.LinesReader - Start reading lines from: resourses\data\data.txt
+2018-12-12 23:54:54.917 [main] INFO  com.epam.triangle.reader.LinesReader - All lines was reading from: resourses\data\data.txt
+2018-12-12 23:54:54.918 [main] INFO  com.epam.triangle.reader.LinesReader - Start reading lines from: resourses\data\empty.txt
+2018-12-12 23:54:54.918 [main] INFO  com.epam.triangle.reader.LinesReader - All lines was reading from: resourses\data\empty.txt
+2018-12-12 23:54:54.918 [main] INFO  com.epam.triangle.reader.LinesReader - Start reading lines from: resoursess\data\data.txt
+2018-12-12 23:54:54.919 [main] ERROR com.epam.triangle.reader.LinesReader - Exception generated! Path resoursess\data\data.txt not valid. java.nio.file.NoSuchFileException: resoursess\data\data.txt
+2018-12-12 23:54:54.922 [main] WARN  com.epam.triangle.entity.Triangle - not valid data  for creating triangle: []
+2018-12-12 23:54:54.922 [main] WARN  com.epam.triangle.entity.Triangle - not valid data  for creating triangle: [Point2D{ x=0.0, y=0.0}, Point2D{ x=0.0, y=0.0}, Point2D{ x=0.0, y=0.0}]
+2018-12-12 23:54:54.923 [main] WARN  com.epam.triangle.entity.Triangle - not valid data  for creating triangle: []
+2018-12-12 23:54:54.923 [main] WARN  com.epam.triangle.entity.Triangle - not valid data  for creating triangle: [Point2D{ x=0.0, y=0.0}, Point2D{ x=1.0, y=1.0}, Point2D{ x=2.0, y=2.0}]
+2018-12-12 23:54:54.926 [main] ERROR com.epam.triangle.sevice.LinearFunctionChecker - Point2D{ x=1.0, y=1.0} equals Point2D{ x=1.0, y=1.0} com.epam.triangle.exception.CannotCalculateFunctionsCoefficiensException: Needed two different points for defining linear function
