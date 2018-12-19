@@ -23,6 +23,20 @@ public class Triangle implements Serializable {
         return points[2];
     }
 
+    public void setPoint2D1(Point2D point){
+        points[0] = point;
+    }
+
+    public void setPoint2D2(Point2D point){
+         points[1] = point;
+    }
+
+    public void setPoint2D3(Point2D point){
+         points[2] = point;
+    }
+
+
+
     public Point2D[] getAllPoints(){
         Point2D[] points = new Point2D[3];
         for(int i = 0 ; i < points.length ; ++i){
@@ -50,16 +64,4 @@ public class Triangle implements Serializable {
                 " points=" + Arrays.toString(points) +
                 '}';
     }
-
-    public static void main(String ... args){
-        Point2D[] arr = new Point2D[3];
-        for (int i =0;i<3;++i){
-            arr[i] = new Point2D(1,2);
-        }
-
-        Triangle triangle = new Triangle(arr);
-        System.out.println(triangle);
-    }
-
-
 }
