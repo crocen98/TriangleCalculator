@@ -1,4 +1,4 @@
-package com.epam.triangle.sevice;
+package com.epam.triangle.sevice.cor;
 
 import com.epam.triangle.entity.Shape2D;
 

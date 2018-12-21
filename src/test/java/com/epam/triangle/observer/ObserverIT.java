@@ -2,11 +2,10 @@ package com.epam.triangle.observer;
 
 import com.epam.triangle.entity.Point2D;
 import com.epam.triangle.entity.Shape2DParametrs;
-import com.epam.triangle.observer.impl.Shape2DObservable;
 import com.epam.triangle.observer.impl.TriangleObservable;
 import com.epam.triangle.observer.impl.WareHouse;
 import com.epam.triangle.sevice.DistanceCalculator;
-import com.epam.triangle.sevice.TriangleCalculator;
+import com.epam.triangle.sevice.cor.impl.TriangleCalculator;
 import com.epam.triangle.sevice.TriangleSides;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -17,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ObserverIT {
-    private static Shape2DObservable observable;
+    private static TriangleObservable observable;
     private static Observer observer;
 
     @BeforeClass

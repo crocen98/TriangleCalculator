@@ -3,8 +3,8 @@ package com.epam.triangle.observer.impl;
 import com.epam.triangle.entity.Shape2D;
 import com.epam.triangle.entity.Shape2DParametrs;
 import com.epam.triangle.observer.Observer;
-import com.epam.triangle.sevice.BaseShape2DCalculator;
-import com.epam.triangle.sevice.Shape2DCalculatorChain;
+import com.epam.triangle.sevice.cor.BaseShape2DCalculator;
+import com.epam.triangle.sevice.cor.Shape2DCalculatorChain;
 
 import java.util.Map;
 

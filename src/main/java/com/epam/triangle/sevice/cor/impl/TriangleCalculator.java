@@ -1,7 +1,9 @@
-package com.epam.triangle.sevice;
+package com.epam.triangle.sevice.cor.impl;
 
 import com.epam.triangle.entity.Shape2D;
 import com.epam.triangle.entity.Triangle;
+import com.epam.triangle.sevice.TriangleSides;
+import com.epam.triangle.sevice.cor.BaseShape2DCalculator;
 
 
 import static java.lang.Math.round;

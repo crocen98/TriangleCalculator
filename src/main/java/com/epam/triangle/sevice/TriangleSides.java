@@ -13,8 +13,9 @@ public class TriangleSides {
 
 
 
-    public double[] getAll(Shape2D triangle){
+    public double[] getAll(Shape2D shape){
 
+            Triangle triangle = (Triangle)shape;
             Point2D[] points = triangle.getAllPoints();
             double[] sides = new double[3];
 

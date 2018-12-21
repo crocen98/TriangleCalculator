@@ -3,10 +3,9 @@ package com.epam.triangle.service;
 import com.epam.triangle.entity.Point2D;
 import com.epam.triangle.entity.Triangle;
 import com.epam.triangle.sevice.DistanceCalculator;
-import com.epam.triangle.sevice.TriangleCalculator;
+import com.epam.triangle.sevice.cor.impl.TriangleCalculator;
 import com.epam.triangle.sevice.TriangleSides;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static java.lang.Math.sqrt;

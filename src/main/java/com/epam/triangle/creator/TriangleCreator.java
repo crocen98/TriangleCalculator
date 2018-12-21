@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-public class TriangleCreator {
+public class TriangleCreator implements Shape2DCreator {
     private static final Logger LOGGER = LogManager.getLogger(Triangle.class);
 
     private final IDGenerator generator = new IDGenerator();
@@ -38,7 +38,7 @@ public class TriangleCreator {
     }
 
 
-
+@Override
     public List<Triangle> createList(List<Point2D[]> listOfPoints) throws CannotCalculateFunctionsCoefficiensException {
         List<Triangle> triangleList = new LinkedList<>();
 

@@ -5,7 +5,7 @@ import com.epam.triangle.exception.CannotCalculateFunctionsCoefficiensException;
 import com.epam.triangle.sevice.FunctionMatchesChecker;
 import com.epam.triangle.sevice.LinearFunctionChecker;
 
-public class TriangleValidator {
+public class TriangleValidator implements Validator {
     public boolean isValid(Point2D[] points) throws CannotCalculateFunctionsCoefficiensException {
         if(points.length !=3){
             return false;
