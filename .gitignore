@@ -1,2 +1,3 @@
-.idea\
-TriangleCalculator.iml
+*.iml
+*.idea
+target/
