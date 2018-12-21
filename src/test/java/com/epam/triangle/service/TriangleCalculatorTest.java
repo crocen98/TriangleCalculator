@@ -6,6 +6,7 @@ import com.epam.triangle.sevice.DistanceCalculator;
 import com.epam.triangle.sevice.TriangleCalculator;
 import com.epam.triangle.sevice.TriangleSides;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static java.lang.Math.sqrt;
@@ -29,8 +30,9 @@ public class TriangleCalculatorTest {
         arrTwo[2] = new Point2D(5,-sqrt(3));
 
 
-        Triangle triangle = new Triangle(arr);
-        Triangle triangleTwo = new Triangle(arrTwo);
+
+        Triangle triangle = new Triangle(1,arr);
+        Triangle triangleTwo = new Triangle(2,arrTwo);
         Assert.assertEquals(6.0,CALCULATOR.perimeter(triangle));
         Assert.assertEquals(6.0,CALCULATOR.perimeter(triangleTwo));
 
@@ -50,8 +52,9 @@ public class TriangleCalculatorTest {
         arr[2] = new Point2D(5,-sqrt(3));
 
 
-        Triangle triangle = new Triangle(arr);
-        Triangle triangleTwo = new Triangle(arr);
+        Triangle triangle = new Triangle(1,arr);
+        Triangle triangleTwo = new Triangle(2,arr);
+
         Assert.assertEquals(1.73,CALCULATOR.square(triangle));
         Assert.assertEquals(1.73,CALCULATOR.square(triangleTwo));
 

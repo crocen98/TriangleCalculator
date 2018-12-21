@@ -2,12 +2,12 @@ package com.epam.triangle.entity;
 
 import java.util.Objects;
 
-public class TriangleParametrs {
+public class Shape2DParametrs {
 
     private double square;
     private  double perimeter;
 
-    public TriangleParametrs(double square, double perimeter) {
+    public Shape2DParametrs(double square, double perimeter) {
         this.square = square;
         this.perimeter = perimeter;
     }
@@ -32,7 +32,7 @@ public class TriangleParametrs {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        TriangleParametrs that = (TriangleParametrs) o;
+        Shape2DParametrs that = (Shape2DParametrs) o;
         return Double.compare(that.square, square) == 0 &&
                 Double.compare(that.perimeter, perimeter) == 0;
     }
@@ -40,5 +40,13 @@ public class TriangleParametrs {
     @Override
     public int hashCode() {
         return Objects.hash(square, perimeter);
+    }
+
+    @Override
+    public String toString() {
+        return "Shape2DParametrs{" +
+                "square=" + square +
+                ", perimeter=" + perimeter +
+                '}';
     }
 }

@@ -3,6 +3,7 @@ package com.epam.triangle.creator;
 import com.epam.triangle.entity.Point2D;
 import com.epam.triangle.entity.Triangle;
 import com.epam.triangle.exception.CannotCalculateFunctionsCoefficiensException;
+import com.epam.triangle.sevice.IDGenerator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,6 +14,7 @@ import java.util.List;
 public class TriangleCreator {
     private static final Logger LOGGER = LogManager.getLogger(Triangle.class);
 
+    private final IDGenerator generator = new IDGenerator();
 
     private TriangleCreator(){}
     private static class TriangleCreatorHolder{
@@ -31,7 +33,8 @@ public class TriangleCreator {
             return null;
         }
 
-        return new Triangle(points);
+        long id = generator.next();
+        return new Triangle(id,points);
     }
 
 

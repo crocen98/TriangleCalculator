@@ -1,12 +1,13 @@
 package com.epam.triangle.sevice;
 
+import com.epam.triangle.entity.Shape2D;
 import com.epam.triangle.entity.Triangle;
 
 
 import static java.lang.Math.round;
 import static java.lang.Math.sqrt;
 
-public class TriangleCalculator {
+public class TriangleCalculator implements Shape2DCalculator {
 
     private TriangleSides sides;
     public TriangleCalculator(TriangleSides sides){
@@ -14,10 +15,8 @@ public class TriangleCalculator {
     }
 
 
-
-
-
-    public double perimeter(Triangle triangle){
+    @Override
+    public double perimeter(Shape2D triangle) {
         double[] sides = this.sides.getAll(triangle);
 
         double perimiter = 0;
@@ -27,8 +26,8 @@ public class TriangleCalculator {
         return perimiter;
     }
 
-
-    public double square(Triangle triangle){
+    @Override
+    public double square(Shape2D triangle) {
         double[] sides = this.sides.getAll(triangle);
 
         double sideOne = sides[0];

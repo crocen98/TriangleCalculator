@@ -25,7 +25,7 @@ public class TriangleTypeCheckerTest {
         arr[1] = new Point2D(6,0);
         arr[2] = new Point2D(5,sqrt(3));
 
-        Triangle triangle = new Triangle(arr);
+        Triangle triangle = new Triangle(1,arr);
 
         Assert.assertFalse(CHECKER.isRight(triangle));
 
@@ -38,7 +38,7 @@ public class TriangleTypeCheckerTest {
         arr[1] = new Point2D(0,6.342);
         arr[2] = new Point2D(0,0);
 
-        Triangle triangle = new Triangle(arr);
+        Triangle triangle = new Triangle(2,arr);
 
         Assert.assertTrue(CHECKER.isRight(triangle));
     }
@@ -51,7 +51,7 @@ public class TriangleTypeCheckerTest {
         arr[1] = new Point2D(-4,0);
         arr[2] = new Point2D(4,0);
 
-        Triangle triangle = new Triangle(arr);
+        Triangle triangle = new Triangle(1,arr);
 
         Assert.assertTrue(CHECKER.isIsosceles(triangle));
     }
@@ -64,7 +64,7 @@ public class TriangleTypeCheckerTest {
         arr[1] = new Point2D(-5,0);
         arr[2] = new Point2D(4,0);
 
-        Triangle triangle = new Triangle(arr);
+        Triangle triangle = new Triangle(1,arr);
 
         Assert.assertFalse(CHECKER.isIsosceles(triangle));
     }
@@ -77,7 +77,7 @@ public class TriangleTypeCheckerTest {
         arr[1] = new Point2D(4,0);
         arr[2] = new Point2D(3,1.73);
 
-        Triangle triangle = new Triangle(arr);
+        Triangle triangle = new Triangle(2,arr);
 
         Assert.assertTrue(CHECKER.isEquilateral(triangle));
     }
@@ -89,7 +89,7 @@ public class TriangleTypeCheckerTest {
         arr[1] = new Point2D(4,0);
         arr[2] = new Point2D(3,1.74);
 
-        Triangle triangle = new Triangle(arr);
+        Triangle triangle = new Triangle(2,arr);
 
         Assert.assertFalse(CHECKER.isEquilateral(triangle));
     }
@@ -102,7 +102,7 @@ public class TriangleTypeCheckerTest {
         arr[1] = new Point2D(100,3);
         arr[2] = new Point2D(3,1.73);
 
-        Triangle triangle = new Triangle(arr);
+        Triangle triangle = new Triangle(1,arr);
 
         Assert.assertTrue(CHECKER.isObsute(triangle));
     }
@@ -114,7 +114,7 @@ public class TriangleTypeCheckerTest {
         arr[1] = new Point2D(4,0);
         arr[2] = new Point2D(3,1.74);
 
-        Triangle triangle = new Triangle(arr);
+        Triangle triangle = new Triangle(1,arr);
 
         Assert.assertFalse(CHECKER.isObsute(triangle));
     }
@@ -127,7 +127,7 @@ public class TriangleTypeCheckerTest {
         arr[2] = new Point2D(3,1.74);
 
 
-        Triangle triangle = new Triangle(arr);
+        Triangle triangle = new Triangle(1,arr);
 
         Assert.assertTrue(CHECKER.isAcute(triangle));
     }
@@ -139,7 +139,7 @@ public class TriangleTypeCheckerTest {
         arr[0] = new Point2D(2,1);
         arr[1] = new Point2D(100,3);
         arr[2] = new Point2D(3,1.73);
-        Triangle triangle = new Triangle(arr);
+        Triangle triangle = new Triangle(1,arr);
         Assert.assertFalse(CHECKER.isAcute(triangle));
     }
 }

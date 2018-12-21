@@ -1,6 +1,7 @@
 package com.epam.triangle.sevice;
 
 import com.epam.triangle.entity.Point2D;
+import com.epam.triangle.entity.Shape2D;
 import com.epam.triangle.entity.Triangle;
 
 public class TriangleSides {
@@ -12,7 +13,7 @@ public class TriangleSides {
 
 
 
-    public double[] getAll(Triangle triangle){
+    public double[] getAll(Shape2D triangle){
             Point2D[] points = triangle.getAllPoints();
             double[] sides = new double[3];
 
