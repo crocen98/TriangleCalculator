@@ -2,6 +2,7 @@ package com.epam.triangle.repository.impl.spicification;
 
 import com.epam.triangle.entity.Point2D;
 import com.epam.triangle.entity.Triangle;
+import com.epam.triangle.exception.CannotFindCalculatorForShapeException;
 import com.epam.triangle.repository.Specification;
 import com.epam.triangle.repository.impl.specification.IDEqualsSpecification;
 import org.testng.Assert;
@@ -14,7 +15,7 @@ public class IDEqualsSpecificationTest {
     private static final Specification<Triangle> spicification = new IDEqualsSpecification(3);
 
     @Test
-    public void ShouldGetTriangleWithIDThreeAndShouldReturnTrue(){
+    public void ShouldGetTriangleWithIDThreeAndShouldReturnTrue() throws CannotFindCalculatorForShapeException {
         Point2D[] arr = new Point2D[3];
         arr[0] = new Point2D(4,0);
         arr[1] = new Point2D(6,0);
@@ -26,7 +27,7 @@ public class IDEqualsSpecificationTest {
     }
 
     @Test
-    public void ShouldGetTriangleWithIDTwoAndShouldReturnFalse(){
+    public void ShouldGetTriangleWithIDTwoAndShouldReturnFalse() throws CannotFindCalculatorForShapeException {
         Point2D[] arr = new Point2D[3];
         arr[0] = new Point2D(4,0);
         arr[1] = new Point2D(6,0);

@@ -2,6 +2,7 @@ package com.epam.triangle.service;
 
 import com.epam.triangle.entity.Point2D;
 import com.epam.triangle.entity.Triangle;
+import com.epam.triangle.exception.CannotFindCalculatorForShapeException;
 import com.epam.triangle.sevice.DistanceCalculator;
 import com.epam.triangle.sevice.cor.impl.TriangleCalculator;
 import com.epam.triangle.sevice.TriangleSides;
@@ -17,7 +18,7 @@ public class TriangleCalculatorTest {
 
 
     @Test
-    public void perimetrShouldEqualSix(){
+    public void perimetrShouldEqualSix() throws CannotFindCalculatorForShapeException {
         Point2D[] arr = new Point2D[3];
         arr[0] = new Point2D(4,0);
         arr[1] = new Point2D(6,0);
@@ -39,7 +40,7 @@ public class TriangleCalculatorTest {
 
 
     @Test
-    public void squareShouldEqualSQRTFromTree(){
+    public void squareShouldEqualSQRTFromTree() throws CannotFindCalculatorForShapeException {
         Point2D[] arr = new Point2D[3];
         arr[0] = new Point2D(4,0);
         arr[1] = new Point2D(6,0);

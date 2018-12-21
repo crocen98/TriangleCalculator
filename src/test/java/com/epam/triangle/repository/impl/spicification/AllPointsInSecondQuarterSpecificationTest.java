@@ -2,6 +2,7 @@ package com.epam.triangle.repository.impl.spicification;
 
 import com.epam.triangle.entity.Point2D;
 import com.epam.triangle.entity.Triangle;
+import com.epam.triangle.exception.CannotFindCalculatorForShapeException;
 import com.epam.triangle.repository.Specification;
 import com.epam.triangle.repository.impl.specification.AllPointsInSecondQuarterSpecification;
 import org.testng.Assert;
@@ -13,7 +14,7 @@ public class AllPointsInSecondQuarterSpecificationTest {
     private static final Specification<Triangle> spicification = new AllPointsInSecondQuarterSpecification();
 
     @Test
-    public void ShouldGetTriangleWithPointsWhichDontLocatedInSecondQuarterAndReturnFalse(){
+    public void ShouldGetTriangleWithPointsWhichDontLocatedInSecondQuarterAndReturnFalse() throws CannotFindCalculatorForShapeException {
         Point2D[] arr = new Point2D[3];
         arr[0] = new Point2D(-4,2);
         arr[1] = new Point2D(6,3);
@@ -23,7 +24,7 @@ public class AllPointsInSecondQuarterSpecificationTest {
     }
 
     @Test
-    public void ShouldGetTriangleWithsPointsWhichLocatedInSecondQuarterAndReturnTrue(){
+    public void ShouldGetTriangleWithsPointsWhichLocatedInSecondQuarterAndReturnTrue() throws CannotFindCalculatorForShapeException {
         Point2D[] arr = new Point2D[3];
         arr[0] = new Point2D(-4,3);
         arr[1] = new Point2D(-6,24);

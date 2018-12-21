@@ -15,9 +15,9 @@ public class ComparatorByPointFromZero implements Comparator<Triangle> {
         Point2D firstPointOne = o1.getPoint(pointNumber);
         Point2D secondPointOne = o2.getPoint(pointNumber);
         double XOneSquare = Math.pow(firstPointOne.getX(),2);
-        double XTwoSquare = Math.pow(firstPointOne.getY(),2);
-        double YOneSquare = Math.pow(secondPointOne.getX(),2);
+        double YOneSquare = Math.pow(firstPointOne.getY(),2);
         double YTwoSquare = Math.pow(secondPointOne.getY(),2);
+        double XTwoSquare = Math.pow(secondPointOne.getX(),2);
         return Double.compare(XOneSquare + YOneSquare , YTwoSquare + XTwoSquare);
     }
 }

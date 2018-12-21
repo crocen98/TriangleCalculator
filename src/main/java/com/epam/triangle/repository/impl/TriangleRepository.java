@@ -1,6 +1,7 @@
 package com.epam.triangle.repository.impl;
 
 import com.epam.triangle.entity.Triangle;
+import com.epam.triangle.exception.CannotFindCalculatorForShapeException;
 import com.epam.triangle.repository.Repository;
 import com.epam.triangle.repository.Specification;
 
@@ -31,7 +32,7 @@ public class TriangleRepository implements Repository<Triangle> {
     }
 
     @Override
-    public List<Triangle> query(Specification<Triangle> specification) {
+    public List<Triangle> query(Specification<Triangle> specification) throws CannotFindCalculatorForShapeException {
         Collection<Triangle> allTriangles =  triangleMap.values();
         List<Triangle> triangles = new ArrayList<>();
 
@@ -46,7 +47,7 @@ public class TriangleRepository implements Repository<Triangle> {
     @Override
     public List<Triangle> sort(Comparator<Triangle> comparator) {
         List<Triangle> allTriangles =  new ArrayList<>(triangleMap.values());
-        Collections.sort(allTriangles,comparator);
+        allTriangles.sort(comparator);
         return allTriangles;
     }
 }

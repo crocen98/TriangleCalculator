@@ -2,6 +2,7 @@ package com.epam.triangle.observer;
 
 import com.epam.triangle.entity.Point2D;
 import com.epam.triangle.entity.Shape2DParametrs;
+import com.epam.triangle.exception.CannotFindCalculatorForShapeException;
 import com.epam.triangle.observer.impl.TriangleObservable;
 import com.epam.triangle.observer.impl.WareHouse;
 import com.epam.triangle.sevice.DistanceCalculator;
@@ -35,14 +36,14 @@ public class ObserverIT {
 
     }
     @BeforeMethod
-    public void resetObservable(){
+    public void resetObservable() throws CannotFindCalculatorForShapeException {
         observable.setPoint(new Point2D(0,0),0);
         observable.setPoint(new Point2D(3,0),1);
         observable.setPoint(new Point2D(0,4),2);
     }
 
     @Test
-    public void shouldChangeThePointAndCalculateNewSquare(){
+    public void shouldChangeThePointAndCalculateNewSquare() throws CannotFindCalculatorForShapeException {
 
         observable.setPoint(new Point2D(4,0),1);
 
@@ -54,7 +55,7 @@ public class ObserverIT {
 
 
     @Test
-    public void shouldChangeThePointAndCalculateNewPerimetr(){
+    public void shouldChangeThePointAndCalculateNewPerimetr() throws CannotFindCalculatorForShapeException {
 
         observable.setPoint(new Point2D(4,0),1);
 

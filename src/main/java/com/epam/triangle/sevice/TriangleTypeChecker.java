@@ -10,6 +10,7 @@ import static java.lang.Math.sqrt;
 
 public class TriangleTypeChecker {
     private TriangleSides sides;
+    private final double ROUND_BY_10 = 10D;
 
     public TriangleTypeChecker(TriangleSides sides){
         this.sides = sides;
@@ -24,12 +25,12 @@ public class TriangleTypeChecker {
         Arrays.sort(sides);
 
         double hypotenuse = sides[2];
-        double roundHypotenuse = round(hypotenuse * 10d)/10d;
+        double roundHypotenuse = round(hypotenuse * ROUND_BY_10)/ROUND_BY_10;
 
         double legOneSquare = pow(sides[1],2);
         double legTwoSquare =  pow(sides[0],2);
         double sumLegsSquare = sqrt(legOneSquare + legTwoSquare);
-        double roundSumLegsSquare = round(sumLegsSquare * 10d) / 10d;
+        double roundSumLegsSquare = round(sumLegsSquare * ROUND_BY_10) / ROUND_BY_10;
         return Double.compare(roundHypotenuse , roundSumLegsSquare) == 0;
     }
 

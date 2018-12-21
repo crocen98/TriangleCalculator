@@ -1,6 +1,9 @@
 package com.epam.triangle.entity;
 
+import com.epam.triangle.exception.CannotFindCalculatorForShapeException;
+
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Triangle extends Shape2D implements Serializable {
@@ -21,18 +24,14 @@ public class Triangle extends Shape2D implements Serializable {
         return points[pointNumber];
     }
 
-    public void setPoint(Point2D point, int pointNumber){
+    public void setPoint(Point2D point, int pointNumber) throws CannotFindCalculatorForShapeException {
         points[pointNumber] = point;
     }
 
 
 
     public Point2D[] getAllPoints(){
-        Point2D[] points = new Point2D[this.points.length];
-        for(int i = 0 ; i < points.length ; ++i){
-            points[i] = this.points[i];
-        }
-        return points;
+        return Arrays.copyOf(this.points,this.points.length);
     }
 
 

@@ -2,6 +2,7 @@ package com.epam.triangle.repository.impl.spicification;
 
 import com.epam.triangle.entity.Point2D;
 import com.epam.triangle.entity.Triangle;
+import com.epam.triangle.exception.CannotFindCalculatorForShapeException;
 import com.epam.triangle.repository.Specification;
 import com.epam.triangle.repository.impl.specification.SquareSmallerThanSpecification;
 import com.epam.triangle.sevice.DistanceCalculator;
@@ -28,7 +29,7 @@ public class SquareSmallerThanSpecificationTest {
 
 
     @Test
-    public void ShouldGetTriangleWithSquareSmallerTwentyAndReturnTrue(){
+    public void ShouldGetTriangleWithSquareSmallerTwentyAndReturnTrue() throws CannotFindCalculatorForShapeException {
         Point2D[] arr = new Point2D[3];
         arr[0] = new Point2D(2,0);
         arr[1] = new Point2D(4,0);
@@ -38,7 +39,7 @@ public class SquareSmallerThanSpecificationTest {
     }
 
     @Test
-    public void ShouldGetTriangleWithSquareBiggerTwentyAndReturnFalse(){
+    public void ShouldGetTriangleWithSquareBiggerTwentyAndReturnFalse() throws CannotFindCalculatorForShapeException {
         Point2D[] arr = new Point2D[3];
         arr[0] = new Point2D(20,0);
         arr[1] = new Point2D(64,0);

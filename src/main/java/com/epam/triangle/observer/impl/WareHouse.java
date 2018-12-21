@@ -2,6 +2,7 @@ package com.epam.triangle.observer.impl;
 
 import com.epam.triangle.entity.Shape2D;
 import com.epam.triangle.entity.Shape2DParametrs;
+import com.epam.triangle.exception.CannotFindCalculatorForShapeException;
 import com.epam.triangle.observer.Observer;
 import com.epam.triangle.sevice.cor.BaseShape2DCalculator;
 import com.epam.triangle.sevice.cor.Shape2DCalculatorChain;
@@ -29,7 +30,7 @@ public class WareHouse implements Observer {
     }
 
     @Override
-    public void handleEvent(long id, Shape2D shape) {
+    public void handleEvent(long id, Shape2D shape) throws CannotFindCalculatorForShapeException {
         double perimetr = calculator.perimeter(shape);
         double square = calculator.square(shape);
 
