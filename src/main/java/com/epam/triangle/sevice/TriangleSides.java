@@ -14,15 +14,17 @@ public class TriangleSides {
 
 
     public double[] getAll(Shape2D triangle){
+
             Point2D[] points = triangle.getAllPoints();
             double[] sides = new double[3];
 
-            for(int i =0;i<sides.length;++i){
-                Point2D pointOne = points[i %3];
-                Point2D pointTwo = points[(i+1) % 3];
-                sides[i] = distanceCalculator.calculateDistance(pointOne,pointTwo);
+            for (int i = 0; i < sides.length; ++i) {
+                Point2D pointOne = points[i % 3];
+                Point2D pointTwo = points[(i + 1) % 3];
+                sides[i] = distanceCalculator.calculateDistance(pointOne, pointTwo);
             }
             return sides;
+
     }
 
 }

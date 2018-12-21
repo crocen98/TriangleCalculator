@@ -3,22 +3,19 @@ package com.epam.triangle.observer.impl;
 import com.epam.triangle.entity.Shape2D;
 import com.epam.triangle.entity.Shape2DParametrs;
 import com.epam.triangle.observer.Observer;
-import com.epam.triangle.sevice.DistanceCalculator;
-import com.epam.triangle.sevice.Shape2DCalculator;
-import com.epam.triangle.sevice.TriangleCalculator;
-import com.epam.triangle.sevice.TriangleSides;
+import com.epam.triangle.sevice.BaseShape2DCalculator;
+import com.epam.triangle.sevice.Shape2DCalculatorChain;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class WareHouse implements Observer {
 
     private Map<Long, Shape2DParametrs> parametrs;
-    private Shape2DCalculator calculator;
+    private Shape2DCalculatorChain calculator;
 
 
 
-    public WareHouse(Map<Long,Shape2DParametrs> parametrs, Shape2DCalculator calculator){
+    public WareHouse(Map<Long,Shape2DParametrs> parametrs, BaseShape2DCalculator calculator){
         this.parametrs = parametrs;
         this.calculator = calculator;
     }
